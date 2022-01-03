@@ -3,23 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-//class based components in React
-//state in class based components
-//function based components do not have their state while class based components have their state
+//nested components
 
-class App extends React.Component{
+function MyHello(props){
+  return <h1>Hi this is MyHello.</h1>
+}
 
-  constructor(props){
-    super(props);    
-    this.surname = "Singh"; //the properties which are owned by component are know as state of the component
-  }
+function YourHello(props){
+  return <h1>Hi this is YourHello.</h1>
+}
 
-  render(){
-    return <h1>Hello {this.props.name} {this.surname}</h1>;
+function SayHello(props){
+  const display = props.isTrue;
+  console.log(display);
+
+  if(display){
+    return <MyHello />
+  }else{
+    return <YourHello />
   }
 }
 
 ReactDOM.render(  
-  <App name="Rajesh"/> ,
+  <SayHello isTrue={true} /> ,
 document.getElementById('root')
 );
