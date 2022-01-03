@@ -4,18 +4,16 @@ import './index.css';
 
 
 //class based components in React
-//state in class based components
-//function based components do not have their state while class based components have their state
+//props in class based components
 
 class App extends React.Component{
 
   constructor(props){
     super(props);    
-    this.surname = "Singh"; //the properties which are owned by component are know as state of the component
   }
 
   render(){
-    return <h1>Hello {this.props.name} {this.surname}</h1>;
+    return <h1>Hello {this.props.name}</h1>;
   }
 }
 
