@@ -2,43 +2,87 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-//working with form
-//forms always maintain state
-//by controlled components
+//currency convertor --> shared state
 
-class MyForm extends React.Component{
+function CurrencyMessage(props){
+  if(props.rupees >= 1000){
+    return <p>This is too much money.</p>
+  }
+  return <p>No This is not too much money.</p>
+}
 
+const unitName = {
+  r:'rupees',
+  d:'dollar'
+};
+
+function toRupees(dollar){
+  return (dollar*75);
+}
+
+function toDollar(rupees){
+  return (rupees/75);
+}
+
+class CurrencyInput extends React.Component{
   constructor(props){
     super(props);
-    this.state = {value:''};
+    //this.state = {currency:''};
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event){
-    this.setState({value: event.target.value});
-    //alert(this.state.value);
-  }
-
-  handleSubmit(event){
-    alert('Are you sure? '+ this.state.value);
-    event.preventDafult();
+    //this.setState({currency: event.target.value});
+    this.props.onCurrencyChange(event.target.value);
   }
 
   render(){
+    //const currency = this.state.currency;
+    const currency = this.props.currency;
+    const unit = this.props.unit;
+
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name: 
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
-        </label>
-        <input type="submit" value="Submit"/>
-      </form>
+      <fieldset>
+        <legend>Enter Your Currency in {unitName[unit]}: </legend>
+        <input value={currency} onChange={this.handleChange}></input>
+        <CurrencyMessage rupees={currency}/>
+      </fieldset>
+    );
+  }
+}
+
+class Calculator extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {currency:'',unit:'r'};
+    this.handleDollarChange = this.handleDollarChange.bind(this);
+    this.handleRupeeChange = this.handleRupeeChange.bind(this);
+  }
+
+  handleRupeeChange(currency){
+    this.setState({unit:'r',currency});
+  }
+
+  handleDollarChange(currency){
+    this.setState({unit:'d',currency});
+  }
+
+  render(){
+    const currency = this.state.currency;
+    const unit = this.state.unit;
+    const rupees = unit === 'd' ? toRupees(currency):currency;
+    const dollar = unit === 'r' ? toDollar(currency):currency;
+    return(
+      <div>
+        <CurrencyInput unit='r' currency={rupees} onCurrencyChange = {this.handleRupeeChange}/>
+        <CurrencyInput unit='d' currency={dollar} onCurrencyChange = {this.handleDollarChange}/>
+      </div>
     );
   }
 }
 
 ReactDOM.render(  
-  <MyForm /> ,
+  <Calculator /> ,
 document.getElementById('root')
 );
