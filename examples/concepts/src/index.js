@@ -2,29 +2,44 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+//working with lists in react
 
-//nested components
+const posts = [
+  {id:101,title:"First Post",content:"This is content from first post."},
+  {id:102,title:"Second Post",content:"This is content from second post."}
+]
 
-function MyHello(props){
-  return <h1>Hi this is MyHello.</h1>
-}
+//you should always have key while working with list items otherwise error in production strict mode
+function Blog(props){
+  const sideBar = (
+    <ul>
+      {props.posts.map(
+        (post) =>
+        <li key={post.id}>
+          {post.title}
+        </li>
+      )}
+    </ul>
+  );
 
-function YourHello(props){
-  return <h1>Hi this is YourHello.</h1>
-}
+  const content = props.posts.map(
+    (post) =>
+        <div key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
+        </div>      
+  );
 
-function SayHello(props){
-  const display = props.isTrue;
-  console.log(display);
-
-  if(display){
-    return <MyHello />
-  }else{
-    return <YourHello />
-  }
+  return(
+    <div>
+      {sideBar}
+      <hr />
+      {content}
+    </div>
+  );
 }
 
 ReactDOM.render(  
-  <SayHello isTrue={true} /> ,
+  <Blog posts={posts}/> ,
 document.getElementById('root')
 );
