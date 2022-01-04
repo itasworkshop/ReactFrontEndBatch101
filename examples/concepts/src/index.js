@@ -2,44 +2,43 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-//working with lists in react
+//working with form
+//forms always maintain state
+//by controlled components
 
-const posts = [
-  {id:101,title:"First Post",content:"This is content from first post."},
-  {id:102,title:"Second Post",content:"This is content from second post."}
-]
+class MyForm extends React.Component{
 
-//you should always have key while working with list items otherwise error in production strict mode
-function Blog(props){
-  const sideBar = (
-    <ul>
-      {props.posts.map(
-        (post) =>
-        <li key={post.id}>
-          {post.title}
-        </li>
-      )}
-    </ul>
-  );
+  constructor(props){
+    super(props);
+    this.state = {value:''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  const content = props.posts.map(
-    (post) =>
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.content}</p>
-        </div>      
-  );
+  handleChange(event){
+    this.setState({value: event.target.value});
+    //alert(this.state.value);
+  }
 
-  return(
-    <div>
-      {sideBar}
-      <hr />
-      {content}
-    </div>
-  );
+  handleSubmit(event){
+    alert('Are you sure? '+ this.state.value);
+    event.preventDafult();
+  }
+
+  render(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name: 
+          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+        </label>
+        <input type="submit" value="Submit"/>
+      </form>
+    );
+  }
 }
 
 ReactDOM.render(  
-  <Blog posts={posts}/> ,
+  <MyForm /> ,
 document.getElementById('root')
 );
