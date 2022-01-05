@@ -10,27 +10,22 @@ import './index.css';
 // technique to use stateful behaviour in function based components
 //useState Hook
 //Returns a stateful value, and a function to update it.
+//Returns a stateful value, and a function to update it.
 
-function MyCalculatorWithHook(props){
+function MyComponentWithHook(props){
 
-  const[first,setFirst] = useState(props.a);
-  const[second,setSecond] = useState(props.b);
-  const[result,setResult] = useState(0);
-
-  const handleResult = () =>{
-    setResult(parseInt(first)+parseInt(second));
-  }
+  const[counter,setCounter] = useState(0);
 
   return(
     <div>
-      <p>Addition od {first} and {second} is {result}</p>
-      <button onClick={handleResult}>Addition</button>
+      <p>Click me {counter} times.</p>
+      <button onClick={ () => setCounter(counter+1)}>ClickMe</button>
     </div>
   );
 
 }
 
 ReactDOM.render(  
-  <MyCalculatorWithHook a="10" b="20" /> ,
+  <MyComponentWithHook /> ,
 document.getElementById('root')
 );
