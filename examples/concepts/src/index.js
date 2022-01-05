@@ -2,38 +2,57 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-//working with style
+//working with forms
 
-function MyBorder(props){
-  return(
-    <div className={'MyBorder MyBorder-'+ props.color}>
-      {props.children}
-    </div>
-  );
+class StudentForm extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {stname:'',lname:'',isPass:true, noOfAttempts:5};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event){
+    //this.setState({value: event.target.value});
+    const target = event.target;
+    const value = target.name === "isPass" ? target.checked: target.value;
+    const name = target.name;
+
+    console.log(name +" "+ value);
+    this.setState({[name]:value});
+  }
+
+  handleSubmit(event){
+    alert('Are you sure you want to submit your country? '+this.state.stname+" "+ this.state.isPass+" "+this.state.noOfAttempts);
+    event.preventDefault();
+  }
+
+
+  render(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name: 
+          <input name="stname" type="text" value={this.state.stname} onChange={this.handleChange}/>
+        </label>
+        <label>
+          Last Name: 
+          <input name="lname" type="text" value={this.state.lname} onChange={this.handleChange}/>
+        </label>
+        <label>
+          IsPass?
+          <input name="isPass" type="checkbox" checked={this.state.isPass} onChange={this.handleChange}/>
+        </label>
+        <label>
+          <input name="noOfAttempts" type="number" value={this.state.noOfAttempts} onChange={this.handleChange}/>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
 }
-
-function MyDialogBox(){
-  return(
-    <div>
-      <MyBorder color="green">
-        <h1 className='MyDialog-title'>Welcome to First Dialog Box.</h1>
-        <p className='MyDialog-message'>This is content from First Dialog Box.</p>
-      </MyBorder>
-      <MyBorder color="red">
-        <h1 className='MyDialog-title'>Welcome to First Dialog Box.</h1>
-        <h1 className='MyDialog-title'>Welcome to First Dialog Box.</h1>
-        <p className='MyDialog-message'>This is content from First Dialog Box.</p>
-      </MyBorder>
-      <MyBorder color="blue">
-        <h1 className='MyDialog-title'>Welcome to First Dialog Box.</h1>
-        <p className='MyDialog-message'>This is content from First Dialog Box.</p>
-      </MyBorder>
-    </div>
-  );
-}
-
 
 ReactDOM.render(  
-  <MyDialogBox /> ,
+  <StudentForm /> ,
 document.getElementById('root')
 );
