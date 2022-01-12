@@ -1,0 +1,38 @@
+function foo4(){
+  var x = 10;
+  console.log(x);
+}
+
+foo4()
+
+//hoisting in javascript
+foo6()
+
+function foo6(){
+   var y = 10;
+   console.log(y); 
+}
+
+console.log(a);
+
+var a = 10
+
+var obj = {p:30,a:10}
+
+with(obj){
+  console.log(obj.p);
+}
+
+
+//first class function
+
+add = function addition(a,b){
+  console.log(a+b);
+}
+
+add(10,20);
+
+
+add1 = (a,b) => {console.log(a+b);};
+
+add1(10,20);

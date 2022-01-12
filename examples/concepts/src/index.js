@@ -32,5 +32,6 @@ function MyCalculatorWithHook(props){
 
 ReactDOM.render(  
   <MyCalculatorWithHook a="10" b="20" /> ,
+  //document.getElementsByName('myname')
 document.getElementById('root')
 );

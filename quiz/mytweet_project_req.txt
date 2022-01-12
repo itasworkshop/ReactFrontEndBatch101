@@ -1,0 +1,14 @@
+My Tweet- project
+
+Problem Statement
+Build an application that allows user to post tweets to their followrs. The application provides following limited functionality:
+
+1. Each user will have some followers. User can tweet a text message(tweet).
+2. A user can see tweets which are posted by users he/she follows. This view is called the feed of the user.
+3. A user can hide other user's tweet from feed.
+4. Auser can delete his/her tweet which should hide this tweet from his followers feed.
+
+Assumptions
+-Name is unique identifier for user.
+-For a particular user, the list of followers can be added only once.
+-Every tweet will have a uniqueId.
