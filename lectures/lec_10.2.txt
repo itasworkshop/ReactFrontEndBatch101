@@ -1,0 +1,12 @@
+ContextAPI
+--> sharable state means --> passing as props
+--> helps in maintaing state among component without explicitly pass as props
+
+examples --> user authenticated information throughout component -- globaly
+theme, preferred language
+
+steps:-
+1) create a project
+npx create-react-app context-demo
+
+2)

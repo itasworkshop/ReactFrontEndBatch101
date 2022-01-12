@@ -1,0 +1,14 @@
+Redux --> "state container"
+
+pridictable state for JS apps
+
+state container for JS apps
+
+immutable object which has global state
+
+1) why do we need redux?
+class level state are managed --> but global level is managed by redux
+
+2)Redux devtools extension in chrome --> for debugging and dev purpose
+
+contextAPI is suitable for smaller application state management but not suitable for larger application.
