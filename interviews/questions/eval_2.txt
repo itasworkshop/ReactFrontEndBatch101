@@ -1,0 +1,76 @@
+Java
+1. static method vs normal method in java?
+2. java 8?
+
+Database
+1. How to connect to database?
+
+Architecure
+1. How do you connect FE with BE?
+
+Advance Java
+1. what will service layer contains?
+2. what is spring boot? spring vs spring boot?
+3. what is the use of get and put in the controller class?
+4. what is springboot configuration annotation?
+5. what is the crossorigin annotation?
+6. what is autowiring?
+7. what is dependancy injection?
+8. what is the use of annotations?
+9. what is inversion of control(IOC)?
+
+Build Tools
+1. What is maven?
+2. Where do you provide dependency in maven?
+ans: POM file
+3. How to generate jar file in spring?
+4. What is JAR/WAR?how do you add jar dependency in your program?
+5. what is archetype?
+ans: predefined structure or skelton of project
+6. what is groupid, artifact, version?
+7. what is POM file?
+8. what is maven build cycle?
+9. maven commands
+mvn clean -- cleans existing build
+mvn test -- runs all test cases
+mvn package -- creates jar
+mvn install -- create and installs jar into local repo
+
+
+CI/CD Pipeline
+1. what is devops?
+2. what do u knw abt jenkins?
+
+JavaScript
+1. ES6 features?
+
+React
+1.What is React?
+2.What is DOM?
+3.What is virtual DOM?
+4.what did u do for form validation?
+5.what are some limitations in React/disadvantages of react?
+6.what is the role of props? How do we pass props?
+7.Where do you provide dependency in react?
+8.What is axios?
+9.reactDOM vs vertualDOM?
+10.class base components vs function base components?
+11.In react can u remove the local host 8080, give it a link where there  should be no localhost line in axios?
+12. what is advantage of react?
+13. what are hooks in react?
+
+Unit Testing
+1. What is Junit?
+2. do the junit for your entity classes...?
+3. In junit which method you will be using for writing testcases (static or dynamic)?
+4. write junit test case for addition of two numbers?
+
+
+Debugging
+1. how to debug your code?
+2. What is logger, how do you use it?
+3. What is log4j?
+
+Programming
+1.write a program to print highgest integer number. values can be storded in array [1,2,3,4,5].
+2. write a program to reverse string.

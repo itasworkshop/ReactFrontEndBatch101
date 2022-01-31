@@ -1,36 +1,54 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import ThemedButton from './themed-button';
+import { ThemeContext, themes } from './theme-context';
 
-//creating context using contextAPI
-
-const ThemeContext = React.createContext('white');
-
-
-class App extends React.Component{
-  render(){
-    //return <Toolbar theme="black" />
-    return (<ThemeContext.Provider value='black'>
-      <Toolbar />
-    </ThemeContext.Provider>
-    );
-  }
-}
-
-function Toolbar(props){
+function Page(){
   return(
     <div>
-      <ThemedButton />
+<h1>Welcome to page.</h1>
     </div>
   );
 }
 
-class ThemedButton extends React.Component{
-  static contextType = ThemeContext;
-  render(){
-    return <button style={{backgroundColor:this.context, color:"white",padding:"15px 30px"}}>ClickMe</button>
-  }
+function Section(){
+  return(
+    <div>
+      <h2>Welcome to section.</h2>
+    </div>
+  );
 }
 
+function Toolbar(props){
+  return(
+    <ThemedButton onClick={props.changeTheme}>
+      ChangeTheme
+    </ThemedButton>
+  );
+}
 
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {theme:themes.light};
+
+  this.toggleTheme = () =>{
+    this.setState(state => (
+      {theme:state.theme === themes.dark ? themes.light: themes.dark}
+    ));
+  };
+}
+
+  render(){
+    return(
+      <div>
+        <ThemeContext.Provider value={this.state.theme} >
+            <Toolbar changeTheme={this.toggleTheme}/>
+        </ThemeContext.Provider>        
+        <ThemedButton />        
+      </div>
+    );
+  };
+}
 export default App;

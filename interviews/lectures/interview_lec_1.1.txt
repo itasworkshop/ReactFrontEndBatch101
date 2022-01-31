@@ -1,0 +1,9 @@
+Interview Tips
+1. questions should be clear.
+2. aoid long pause.
+3. use keywords.
+
+
+Java Basics
+
+1. static 
