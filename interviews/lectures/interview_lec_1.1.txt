@@ -1,9 +1,38 @@
 Interview Tips
 1. questions should be clear.
-2. aoid long pause.
+2. avoid long pause.
 3. use keywords.
 
 
 Java Basics
 
-1. static 
+1. static keyword
+object is not required
+
+2. public,private,protected -- access modifiers
+
+3. local variable vs class variable?
+
+4. what is static import?
+
+5. what is class and object?
+
+6. how do we create objects?
+
+7. what is constructor?
+
+8. what is overloading in java?
+
+9. what is over ridding?
+
+10. what is inheritance?
+
+11. IS-A relationship and HAS-A relationship?
+
+12. what is this keyword?, super keyword?
+
+13. what is static block? use of static block?
+
+
+
+
