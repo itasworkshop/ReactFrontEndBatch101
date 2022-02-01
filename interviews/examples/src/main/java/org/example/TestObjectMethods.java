@@ -41,9 +41,6 @@ class Student2{
            return false;
        }
     }
-
-
-
 }
 
 public class TestObjectMethods {

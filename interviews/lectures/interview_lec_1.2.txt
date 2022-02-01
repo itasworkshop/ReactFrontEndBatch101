@@ -54,6 +54,7 @@ object is not required
 23. difference between array and arraylist?
 
 
-
+24. ArrayList vs LinkedList -- index
+LinkedList are doubly linked ,Iteration is more slowly than an ArrayList, but it's a good choice when you need fast insertion and deletion.
 
 
