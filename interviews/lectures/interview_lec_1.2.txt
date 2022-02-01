@@ -1,0 +1,59 @@
+Interview Tips
+1. questions should be clear.
+2. avoid long pause.
+3. use keywords.
+
+
+Java Basics
+
+1. static keyword
+object is not required
+
+2. public,private,protected -- access modifiers
+
+3. local variable vs class variable?
+
+4. what is static import?
+
+5. what is class and object?
+
+6. how do we create objects?
+
+7. what is constructor?
+
+8. what is overloading in java?
+
+9. what is over ridding?
+
+10. what is inheritance?
+
+11. IS-A relationship and HAS-A relationship?
+
+12. what is this keyword?, super keyword?
+
+13. what is static block? use of static block?
+
+14. what is toString() method?
+
+15. what is equals?
+
+16. what is object class?
+
+17. methods of object class? -- toString(), equals(),hashcode()
+
+18. how do we achive encapsulation? -- using getters setters
+
+19. what are accessors and mutators? getters n setters
+
+20. what is equals()?
+
+21. what is hashcode()?
+
+22. what is collection? -- collection of objects
+
+23. difference between array and arraylist?
+
+
+
+
+
