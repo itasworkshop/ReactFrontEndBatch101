@@ -1,0 +1,9 @@
+1) static vs non static logger
+
+There is no behavioral difference between a static and non-static Logger. Both will have the Logger name assigned when they are created, which usually will be the name of the class they are associated with.
+
+2) log4j message level hirearchy
+public final static int ERROR_INT = 40000;
+public final static int WARN_INT  = 30000;
+public final static int INFO_INT  = 20000;
+public final static int DEBUG_INT = 10000;

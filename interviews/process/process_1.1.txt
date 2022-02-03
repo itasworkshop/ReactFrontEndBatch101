@@ -1,0 +1,13 @@
+Enviornments
+
+CI/CD pipeline
+gihub commit --> raise review --> +1 --> merge --> Capstone_2.3.21
+
+github commit --> every 1 hour jenkins jobs --> final build if success --> taken by testing team
+
+At least 2
+Dev-- dev team
+Test -- testing team
+
+UAT -- user acceptance testing
+PROD -- PROD
