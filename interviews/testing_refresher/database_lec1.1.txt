@@ -1,0 +1,108 @@
+Database Refresher
+
+Data --> useful information
+Database management system
+DBMS --> organising or managing data
+file system, excel sheet etc
+
+RDBMS --> Relational database management system
+data in terms of rows and columns --> Table
+one table is related to another table
+
+example:- retail_db
+dept
+id 	name
+101 	clothing
+102	kitchen
+
+catgories
+id	name		category_dept_id
+23	kids wear	101
+26	plastic		102
+
+create table dept(id number primary key,name varchar2(10));
+
+describe dept;
+
+insert into dept values(101,'CS');
+insert into dept values(102,'IT');
+insert into dept values(103,'EE');
+insert into dept values(104,'EC');
+
+select * from dept;
+
+select * from dept where id >103;
+
+create table student(
+roll number primary key, 
+name varchar2(30), 
+st_dept number,
+FOREIGN KEY (st_dept) REFERENCES dept(id)
+);
+
+insert into student values(222, 'Rajesh', 101);
+insert into student values(223, 'Raj', 101);
+insert into student values(224, 'Tom', 103);
+insert into student values(225, 'Suraj', 102);
+
+Constraints --> rules and regulations
+primary key --> used to identify perticular row, unique+not null
+foriegn key --> related to primary key of another table
+unique key
+not null
+
+drop table dept;
+drop table student;
+
+drop vs delete?
+dropping object vs deleting data
+
+how do i delete entire data in a table?
+answer:- delete from <table_name>; without condition
+
+truncate table <table_name>;
+
+truncate vs delete?
+truncate is faster for deleting entire data in a table.
+
+Join --> displaying data from multiple tables
+
+select s.name,d.name
+from student s,dept d;
+
+cross join --> without condition
+natural join/equi join
+
+select s.name,d.name
+from student s,dept d
+where s.st_dept = d.id;
+
+create table a(num number);
+
+create table b(num number);
+
+insert into a values(1);
+
+a
+1
+1
+0
+0
+0
+
+b
+0
+0
+1
+
+which join --> how many rows?
+cross join --> 15 = 5*3
+natural join/inner join/equi join -->
+
+
+
+
+
+
+
+
